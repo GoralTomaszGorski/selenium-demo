@@ -1,8 +1,13 @@
 package goral.utils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverFactory {
-    WebDriver driver = new ChromeDriver();
+
+    public static WebDriver getDriver(){
+        WebDriverManager.chromedriver().setup();
+        return new ChromeDriver();
+    }
 }
