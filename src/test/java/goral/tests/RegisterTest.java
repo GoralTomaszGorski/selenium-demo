@@ -1,7 +1,10 @@
 package goral.tests;
 
-import goral.pages.HomePage;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import goral.pages.HomePage;
 
 public class RegisterTest extends BaseTest{
 
@@ -12,8 +15,11 @@ public class RegisterTest extends BaseTest{
 
     @Test
     public void registerUserTest(){
-       new HomePage(driver).openMyAccountPage()
-               .registerUser("tester@testowy.pl", "tester@testowy.pl");
+       WebElement dashboardLink =  new HomePage(driver).openMyAccountPage()
+               .registerUser("tester3e1@testowy.pl", "tester3e1@testowy.pl").getDashboardLink();
+
+               Assert.assertTrue(dashboardLink.isDisplayed());
+               Assert.assertEquals(dashboardLink.getText(), "Dashboard");
     }
 
 }
