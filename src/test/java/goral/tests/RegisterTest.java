@@ -5,12 +5,16 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import goral.pages.HomePage;
+import goral.utils.DateUtil;
 
 public class RegisterTest extends BaseTest{
 
+
+    
     @Test
     public void registerTest(){
         System.out.println("Mock");
+        System.out.println(DateUtil.generateRandomNumber(0, 100));
     }
 
     @Test

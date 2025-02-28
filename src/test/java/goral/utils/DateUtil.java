@@ -2,6 +2,7 @@ package goral.utils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Random;
 
 public class DateUtil {
 
@@ -16,4 +17,8 @@ public class DateUtil {
         return LocalDateTime.now().format(formatter);
     }
 
+    public static int generateRandomNumber(int min, int max) {        
+        Random random = new Random();
+        return random.nextInt((max - min) + 1) + min;
+    }
 }
