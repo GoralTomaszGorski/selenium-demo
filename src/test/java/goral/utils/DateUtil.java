@@ -1,0 +1,19 @@
+package goral.utils;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class DateUtil {
+
+    public static String getCurrentDateTime() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+        return LocalDateTime.now().format(formatter);
+    }
+
+    // Metoda zwracająca aktualną datę w podanym formacie (np. "dd/MM/yyyy HH:mm")
+    public static String getFormattedDate(String pattern) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+        return LocalDateTime.now().format(formatter);
+    }
+
+}
