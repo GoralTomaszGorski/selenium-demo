@@ -10,20 +10,21 @@ import goral.utils.DateUtil;
 public class RegisterTest extends BaseTest{
 
 
-    
+    String ganerateEmail = "Tomek" + DateUtil.getCurrentDateTime()+ "@testowy.pl";
+
     @Test
     public void registerTest(){
         System.out.println("Mock");
-        System.out.println(DateUtil.generateRandomNumber(0, 100));
+        System.out.println(DateUtil.getCurrentDateTime());
     }
 
     @Test
     public void registerUserTest(){
        WebElement dashboardLink =  new HomePage(driver).openMyAccountPage()
-               .registerUser("tester3e1@testowy.pl", "tester3e1@testowy.pl").getDashboardLink();
+               .registerUser(ganerateEmail, ganerateEmail).getDashboardLink();
 
                Assert.assertTrue(dashboardLink.isDisplayed());
-               Assert.assertEquals(dashboardLink.getText(), "Dashboard");
+               Assert.assertEquals(dashboardLink.getText(), "Dashboard");  
     }
 
 }
