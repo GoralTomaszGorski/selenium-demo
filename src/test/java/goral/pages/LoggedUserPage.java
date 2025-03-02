@@ -11,11 +11,8 @@ public class LoggedUserPage {
     @FindBy(linkText =  "Dashboard")
     private WebElement dashboardLink;
 
-    @FindBy(xpath = "//ul[@class = 'woocommerce-error']//li")
-    private WebElement error;
 
     private WebDriver driver;
-
     public LoggedUserPage(WebDriver driver){
         PageFactory.initElements(driver, this);
         this.driver = driver;
@@ -25,7 +22,5 @@ public class LoggedUserPage {
         return dashboardLink;
     }
 
-    public WebElement getError(){
-        return error;
-    }
+
 }

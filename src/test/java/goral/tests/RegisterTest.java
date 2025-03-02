@@ -21,19 +21,17 @@ public class RegisterTest extends BaseTest{
     @Test
     public void registerUserTest(){
        WebElement dashboardLink =  new HomePage(driver).openMyAccountPage()
-               .registerUser(generateEmail, generateEmail).getDashboardLink();
+               .registerUserValidData(generateEmail, generateEmail).getDashboardLink();
 
                Assert.assertTrue(dashboardLink.isDisplayed());
                Assert.assertEquals(dashboardLink.getText(), "Dashboard");  
     }
 
-
     @Test
     public void registerUserWithSameTest() {
         WebElement error = new HomePage(driver).openMyAccountPage()
-                .registerUser("tomek@testowy.pl", "tomek@testowy.pl").getError();
+                .registerUserInvalidData("tomek@testowy.pl", "tomek@testowy.pl").getError();
 
-        Assert.assertTrue(error.getText().contains("Error: An account is already registered with your email address. Please log in."), "Dashboard");
-        System.out.println("berrotberrot");
+        Assert.assertTrue(error.getText().contains("Error: An account is already registered with your email address. Please log in."));
     }
 }
