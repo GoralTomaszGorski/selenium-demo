@@ -11,7 +11,6 @@ public class LoggedUserPage {
     @FindBy(linkText =  "Dashboard")
     private WebElement dashboardLink;
 
-
     private WebDriver driver;
     public LoggedUserPage(WebDriver driver){
         PageFactory.initElements(driver, this);

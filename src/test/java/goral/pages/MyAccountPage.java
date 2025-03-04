@@ -72,5 +72,4 @@ public class MyAccountPage {
         passwordInp.sendKeys(password);
         loginBtn.click();
     }
-
 }

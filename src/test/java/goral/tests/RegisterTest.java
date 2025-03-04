@@ -22,7 +22,6 @@ public class RegisterTest extends BaseTest{
     public void registerUserTest(){
        WebElement dashboardLink =  new HomePage(driver).openMyAccountPage()
                .registerUserValidData(generateEmail, generateEmail).getDashboardLink();
-
                Assert.assertTrue(dashboardLink.isDisplayed());
                Assert.assertEquals(dashboardLink.getText(), "Dashboard");  
     }
