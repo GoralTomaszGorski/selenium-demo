@@ -11,7 +11,8 @@ public class ProductPage {
     @FindBy(name = "add-to-cart")
     private WebElement addToCartButton;
 
-    @FindBy(className ="button wc-forward")
+    @FindBy(xpath = "//div[@class='woocommerce-messsage']//a[text=()='View cart']")
+    
     private WebElement viewCartButton;
 
     private WebDriver driver;
