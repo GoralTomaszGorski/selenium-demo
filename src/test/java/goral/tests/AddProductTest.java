@@ -13,7 +13,9 @@ public class AddProductTest extends BaseTest {
         new HomePage(driver)
                 .openShopPage()
                 .openProduct("Java Selenium WebDriver")
-                .addProductToCart();
+                .addProductToCart()
+                .viewCart()
+                .openAddressDetails();
 
     }
 }
