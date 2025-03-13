@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class ProductListPage{
+public class ProductListPage {
 
     private WebDriver driver;
 
@@ -14,8 +14,8 @@ public class ProductListPage{
 
     }
 
-    public ProductPage openProduct(String title){
-        driver.findElement(By.xpath("//h2[text()='"+title+"']")).click();
+    public ProductPage openProduct(String title) {
+        driver.findElement(By.xpath("//h2[text()='" + title + "']")).click();
         return new ProductPage(driver);
     }
 

@@ -1,9 +1,5 @@
 package goral.yamReader;
 
-
-import java.util.HashMap;
-import java.util.Map;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,5 +10,5 @@ public class YamlData {
     private String password;
 
     public YamlData() {
-    }   
+    }
 }
