@@ -5,20 +5,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoggedUserPage {
+public class CartPage {
 
-    @FindBy(linkText = "Dashboard")
-    private WebElement dashboardLink;
+    @FindBy(partialLinkText = "Proceed to checkout")
+    private WebElement proceedToCheckoutButton;
 
     private WebDriver driver;
-
-    public LoggedUserPage(WebDriver driver) {
+    
+    public CartPage(WebDriver driver){
         PageFactory.initElements(driver, this);
         this.driver = driver;
+
     }
 
-    public WebElement getDashboardLink() {
-        return dashboardLink;
+    public AddressDetailsPage openAddressDetails(){
+        proceedToCheckoutButton.click();
+        return new AddressDetailsPage(driver);
+
     }
 
 }
