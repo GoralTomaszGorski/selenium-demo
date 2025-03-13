@@ -7,19 +7,18 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoggedUserPage {
 
-
-    @FindBy(linkText =  "Dashboard")
+    @FindBy(linkText = "Dashboard")
     private WebElement dashboardLink;
 
     private WebDriver driver;
-    public LoggedUserPage(WebDriver driver){
+
+    public LoggedUserPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 
-    public WebElement getDashboardLink(){
+    public WebElement getDashboardLink() {
         return dashboardLink;
     }
-
 
 }

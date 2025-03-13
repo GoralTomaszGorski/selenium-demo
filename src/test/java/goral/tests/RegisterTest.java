@@ -1,6 +1,5 @@
 package goral.tests;
 
-import org.checkerframework.checker.units.qual.g;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,12 +7,12 @@ import org.testng.annotations.Test;
 import goral.pages.HomePage;
 import goral.utils.DateUtil;
 
-public class RegisterTest extends BaseTest{
+public class RegisterTest extends BaseTest {
 
-    String generateEmail = "Tomek" + DateUtil.getCurrentDateTime()+ "@testowy.pl";
+    String generateEmail = "Tomek" + DateUtil.getCurrentDateTime() + "@testowy.pl";
 
     @Test
-    public void registerTest(){
+    public void registerTest() {
         System.out.println("Mock");
         System.out.println(DateUtil.getCurrentDateTime());
         System.out.println(DateUtil.generateRandomNumber(1, 100));
