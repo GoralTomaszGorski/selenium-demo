@@ -15,7 +15,7 @@ public class ProductListPage{
     }
 
     public ProductPage openProduct(String title){
-        driver.findElement(By.xpath("//h2[text()='"+title+"']")).click();
+        driver.findElement(By.xpath("//h2[text()='"+ title +"']")).click();
         return new ProductPage(driver);
     }
 
