@@ -26,7 +26,7 @@ public class HomePage {
     }
 
     public ProductListPage openShopPage() {
-        myAccountLink.click();
+        shopLink.click();
         return new ProductListPage(driver);
     }
 
