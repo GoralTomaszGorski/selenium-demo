@@ -30,17 +30,17 @@ public class MyAccountPage {
 
     private WebDriver driver;
 
-    public MyAccountPage(WebDriver driver){
+    public MyAccountPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 
-    public LoggedUserPage registerUserValidData(String email, String password){
+    public LoggedUserPage registerUserValidData(String email, String password) {
         registerUser(email, password);
         return new LoggedUserPage(driver);
     }
 
-    public MyAccountPage registerUserInvalidData(String email, String password){
+    public MyAccountPage registerUserInvalidData(String email, String password) {
         registerUser(email, password);
         return this;
     }
@@ -51,18 +51,16 @@ public class MyAccountPage {
         registerButton.click();
     }
 
-
-    public WebElement getError(){
+    public WebElement getError() {
         return error;
     }
 
-    
-    public LoggedUserPage logInValidData(String email, String password){
+    public LoggedUserPage logInValidData(String email, String password) {
         logIn(email, password);
         return new LoggedUserPage(driver);
     }
 
-    public MyAccountPage logInInvalidData(String email, String password){
+    public MyAccountPage logInInvalidData(String email, String password) {
         logIn(email, password);
         return this;
     }

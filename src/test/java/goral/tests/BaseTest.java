@@ -8,12 +8,12 @@ import org.testng.annotations.BeforeMethod;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest {   
+public class BaseTest {
 
     protected WebDriver driver;
 
     @BeforeMethod
-    public void setup(){
+    public void setup() {
         driver = DriverFactory.getDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         driver.manage().window().maximize();
