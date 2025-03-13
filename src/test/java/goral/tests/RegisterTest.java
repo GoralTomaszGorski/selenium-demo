@@ -1,5 +1,6 @@
 package goral.tests;
 
+import org.checkerframework.checker.units.qual.g;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -18,19 +19,30 @@ public class RegisterTest extends BaseTest{
         System.out.println(DateUtil.generateRandomNumber(1, 100));
     }
 
-    @Test
+    @Test (priority = 1)
     public void registerUserTest(){
        WebElement dashboardLink =  new HomePage(driver).openMyAccountPage()
-               .registerUserValidData(generateEmail, generateEmail).getDashboardLink();
+               .registerUserValidData(generateEmail, generateEmail)
+               .getDashboardLink();
                Assert.assertTrue(dashboardLink.isDisplayed());
                Assert.assertEquals(dashboardLink.getText(), "Dashboard");  
     }
 
-    @Test
+    @Test (priority = 2)
     public void registerUserWithSameTest() {
         WebElement error = new HomePage(driver).openMyAccountPage()
-                .registerUserInvalidData("tomek@testowy.pl", "tomek@testowy.pl").getError();
+                .registerUserInvalidData(generateEmail, generateEmail)
+                .getError();
+        Assert.assertTrue(error.getText()
+        .contains("Error: An account is already registered with your email address. Please log in."));
+    }
 
-        Assert.assertTrue(error.getText().contains("Error: An account is already registered with your email address. Please log in."));
+    @Test (priority = 3)
+    public void logInTest() {
+        WebElement dashboardLink = new HomePage(driver)
+                .openMyAccountPage()
+                .logInValidData(generateEmail, generateEmail)
+                .getDashboardLink();
+        Assert.assertEquals(dashboardLink.getText(), "Dashboard");
     }
 }
