@@ -4,8 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public class AddressDetailsPage {
 
-    public AddressDetailsPage(WebDriver driver){
-        
-    }
+    public AddressDetailsPage(WebDriver driver) {
 
+    }
 }

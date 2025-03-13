@@ -11,14 +11,14 @@ public class CartPage {
     private WebElement proceedToCheckoutButton;
 
     private WebDriver driver;
-    
-    public CartPage(WebDriver driver){
+
+    public CartPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
 
     }
 
-    public AddressDetailsPage openAddressDetails(){
+    public AddressDetailsPage openAddressDetails() {
         proceedToCheckoutButton.click();
         return new AddressDetailsPage(driver);
 
