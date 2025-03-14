@@ -15,4 +15,17 @@ public class AddProductTest extends BaseTest {
                 .viewCart()
                 .openAddressDetails();
     }
+
+    @Test
+    public void addProductTest2() {
+        new HomePage(driver)
+                .openShopPage()
+                .openProduct("Java Selenium WebDriver")
+                .addProductToCart()
+                .viewCart()
+                .openAddressDetails()
+                .sendBillingDetails();
+    }
+
+
 }
