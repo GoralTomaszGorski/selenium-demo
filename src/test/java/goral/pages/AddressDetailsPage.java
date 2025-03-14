@@ -51,4 +51,26 @@ public class AddressDetailsPage {
         this.driver = driver;
     }
 
+    YamlReader reader = new YamlReader();
+    YamlData dataYaml = reader.getYamlData();
+
+    public void sendBillingDetails(){
+        firstNameInp.sendKeys(dataYaml.getFirstName());
+        lastNameInp.sendKeys(dataYaml.getLastName());
+        companyNameInp.sendKeys(dataYaml.getCompanyName());
+        countryContainerInp.click();
+        companyNameInp.sendKeys("Poland");
+        companyNameInp.sendKeys(Keys.ENTER);
+        suitNbInp.click();
+        houseNbInp.click();
+        billingCityInp.click();
+        billingEmailInp.click();
+        billingPhoneInp.click();
+        billingPostcodeInp.click();
+
+    }
+
+
+
+
 }
