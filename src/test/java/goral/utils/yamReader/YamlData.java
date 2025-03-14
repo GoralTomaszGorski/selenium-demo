@@ -8,9 +8,12 @@ import lombok.Setter;
 public class YamlData {
     private String login;
     private String password;
+
     private String urlString;
-    private String userName;
-    private String userSurname;
+
+    private String firstName;
+    private String lastName;
+    private String companyName;
     private String street;
     private String buildingNb;
     private String postOffice;
