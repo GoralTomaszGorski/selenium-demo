@@ -5,14 +5,19 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import goral.pages.HomePage;
+import goral.utils.yamReader.YamlData;
+import goral.utils.yamReader.YamlReader;
 
 public class LogInTest extends BaseTest {
+
+        YamlReader reader = new YamlReader();
+        YamlData dataYaml = reader.getYamlData();
 
     @Test
     public void logInTest() {
         WebElement dashboardLink = new HomePage(driver)
                 .openMyAccountPage()
-                .logInValidData("tomek@testowy.pl", "tomek@testowy.pl")
+                .logInValidData(dataYaml.getUsername(), dataYaml.getPassword())
                 .getDashboardLink();
         Assert.assertEquals(dashboardLink.getText(), "Dashboard");
 
