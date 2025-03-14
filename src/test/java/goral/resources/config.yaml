@@ -1,4 +1,6 @@
 credentials:
   username: tester@testowy.pl
   password: tester@testowy.pl
+url:
+  urlString: http://seleniumdemo.com/
 

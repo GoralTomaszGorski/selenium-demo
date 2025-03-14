@@ -1,4 +1,4 @@
-package goral.yamReader;
+package goral.utils.yamReader;
 
 
 import java.io.FileInputStream;
@@ -22,6 +22,8 @@ public class YamlReader {
             yamlData.setUsername(credentialsMap.get("username"));
             yamlData.setPassword(credentialsMap.get("password"));
 
+            Map<String, String> urlMap = (Map<String, String>) yamlReader.get("url");
+            yamlData.setUrlString(urlMap.get("urlString"));
 
         } catch (Exception e) {
             System.err.println("Input stream error: " + e.getMessage());

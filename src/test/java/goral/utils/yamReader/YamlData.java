@@ -1,4 +1,4 @@
-package goral.yamReader;
+package goral.utils.yamReader;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,6 +8,7 @@ import lombok.Setter;
 public class YamlData {
     private String username;
     private String password;
+    private String urlString;
 
     public YamlData() {
     }
