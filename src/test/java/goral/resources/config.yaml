@@ -1,6 +1,16 @@
 credentials:
-  username: tester@testowy.pl
+  login: tester@testowy.pl
   password: tester@testowy.pl
 url:
   urlString: http://seleniumdemo.com/
+header:
+  first_name: Tomek
+  last_name: Górski
+  company_name: Firma Jana Rogala
+  street: Karola Goduli i Dariusza Fóty
+  building_number: "467"
+  suite_number: "544"
+  post_office: Chrząszczygrzebowice Kolonia
+  postcode: 23-456
+  city: Łękołody Stare
 
