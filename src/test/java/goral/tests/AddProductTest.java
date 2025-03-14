@@ -1,6 +1,7 @@
 package goral.tests;
 
 import org.testng.annotations.Test;
+
 import goral.pages.HomePage;
 
 public class AddProductTest extends BaseTest {
@@ -25,4 +26,6 @@ public class AddProductTest extends BaseTest {
                 .openAddressDetails()
                 .sendBillingDetails();
     }
+
+
 }

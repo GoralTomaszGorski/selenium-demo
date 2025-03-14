@@ -14,3 +14,13 @@ header:
   postcode: 23-456
   city: Łękołody Stare
 
+header:
+  first_name: Tomek
+  last_name: Górski
+  company_name: Firma Jana Rogala
+  street: Karola Goduli i Dariusza Fóty
+  building_number: "467"
+  suite_number: "544"
+  post_office: Chrząszczygrzebowice Kolonia
+  postcode: 23-456
+  city: Łękołody Stare
