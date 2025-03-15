@@ -27,7 +27,7 @@ public class AddressDetailsPage {
     private WebElement selectCountryInp;
 
     @FindBy( xpath = ("//input[@id='billing_address_1']"))
-    private WebElement houseNbInp;
+    private WebElement houseNbAndStreetInp;
 
     @FindBy( xpath = ("//input[@id='billing_address_2']"))
     private WebElement suitNbInp;
@@ -44,6 +44,9 @@ public class AddressDetailsPage {
     @FindBy( xpath = ("//input[@id='billing_email']"))
     private WebElement billingEmailInp;
 
+    @FindBy( xpath = ("//textarea[@id='order_comments']"))
+    private WebElement borderCommentsInp;
+
     private WebDriver driver;
 
     public AddressDetailsPage(WebDriver driver) {
@@ -59,15 +62,15 @@ public class AddressDetailsPage {
         lastNameInp.sendKeys(dataYaml.getLastName());
         companyNameInp.sendKeys(dataYaml.getCompanyName());
         countryContainerInp.click();
-        companyNameInp.sendKeys("Poland");
-        companyNameInp.sendKeys(Keys.ENTER);
-        suitNbInp.click();
-        houseNbInp.click();
-        billingCityInp.click();
-        billingEmailInp.click();
-        billingPhoneInp.click();
-        billingPostcodeInp.click();
-
+        selectCountryInp.sendKeys("Poland");
+        selectCountryInp.sendKeys(Keys.ENTER);
+        houseNbAndStreetInp.sendKeys(dataYaml.getStreet()+" "+dataYaml.getBuildingNb());
+        suitNbInp.sendKeys(dataYaml.getSuiteNb());
+        billingPostcodeInp.sendKeys(dataYaml.getPostCode());
+        billingCityInp.sendKeys(dataYaml.getCity());
+        billingPhoneInp.sendKeys(dataYaml.getPhone());
+        billingEmailInp.sendKeys(dataYaml.getEmail());
+        borderCommentsInp.sendKeys(dataYaml.getOrderComments());
     }
 
 

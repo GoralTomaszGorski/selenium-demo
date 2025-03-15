@@ -7,12 +7,12 @@ import org.testng.annotations.Test;
 import goral.pages.HomePage;
 import goral.utils.DateUtil;
 
-public class RegisterTest extends BaseTest {
+public class RegisterTest extends BaseTest{
 
-    String generateEmail = "Tomek" + DateUtil.getCurrentDateTime() + "@testowy.pl";
+    String generateEmail = "Tomek" + DateUtil.getCurrentDateTime()+ "@testowy.pl";
 
     @Test
-    public void registerTest() {
+    public void registerTest(){
         System.out.println("Mock");
         System.out.println(DateUtil.getCurrentDateTime());
         System.out.println(DateUtil.generateRandomNumber(1, 100));
@@ -29,6 +29,10 @@ public class RegisterTest extends BaseTest {
 
     @Test (priority = 2)
     public void registerUserWithSameTest() {
+        WebElement error = new HomePage(driver).openMyAccountPage()
+                .registerUserInvalidData("tomek@testowy.pl", "tomek@testowy.pl").getError();
+
+        Assert.assertTrue(error.getText().contains("Error: An account is already registered with your email address. Please log in."));
         WebElement error = new HomePage(driver).openMyAccountPage()
                 .registerUserInvalidData(generateEmail, generateEmail)
                 .getError();
