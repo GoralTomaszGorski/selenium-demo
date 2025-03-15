@@ -25,16 +25,20 @@ public class YamlReader {
             Map<String, String> urlMap = (Map<String, String>) yamlReader.get("url");
             yamlData.setUrlString(urlMap.get("urlString"));
 
-
             Map<String, String> headerMap = (Map<String, String>) yamlReader.get("header");
             yamlData.setFirstName(headerMap.get("first_name"));
             yamlData.setLastName(headerMap.get("last_name"));
             yamlData.setCompanyName(headerMap.get("company_name"));
+            yamlData.setCountry(headerMap.get("country"));
             yamlData.setStreet(headerMap.get("street"));
             yamlData.setBuildingNb(headerMap.get("building_number"));
+            yamlData.setSuiteNb(headerMap.get("suite_number"));
             yamlData.setPostOffice(headerMap.get("post_office"));
             yamlData.setPostCode(headerMap.get("postcode"));
             yamlData.setCity(headerMap.get("city"));
+            yamlData.setEmail(headerMap.get("email"));
+            yamlData.setPhone(headerMap.get("phone"));
+            yamlData.setOrderComments(headerMap.get("order_comments"));
 
         } catch (Exception e) {
             System.err.println("Input stream error: " + e.getMessage());
