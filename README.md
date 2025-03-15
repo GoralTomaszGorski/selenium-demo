@@ -22,29 +22,32 @@ The project is based on Selenium WebDriver and aims to provide simple, understan
 
    ```bash
    git clone https://github.com/GoralTomaszGorski/selenium-demo.git
+   
+2. **Install dependencies:**:
+
+    If you are using Maven:
+
+   ```bash
+    cd selenium-demo
+    mvn install
+
+3. **Set up WebDriver:**
 
 
-Install dependencies:
+    Make sure you have the correct WebDriver installed (e.g., ChromeDriver for Google Chrome). Remember to update the WebDriver path in the code if needed.
 
-If you are using Maven:
+4. **Run the tests:**
 
-bash:
-cd selenium-demo
-mvn install
-Set up WebDriver:
+   To run the tests, use Maven:
+    ```bash
+    mvn test
+    ```
 
-Make sure you have the correct WebDriver installed (e.g., ChromeDriver for Google Chrome). Remember to update the WebDriver path in the code if needed.
+## Example Usage
 
-Run the tests:
-
-To run the tests, use Maven:
-
-bash:
-mvn test
-
-Example Usage
 The project includes basic tests that perform interactions with a sample web page. Here's an example of a simple login test:
 
+   ```bash
 @Test
 public void testLogin() {
     WebDriver driver = new ChromeDriver();
@@ -63,9 +66,8 @@ public void testLogin() {
 
     driver.quit();
 }
+   ```
 The login test opens the page, enters login credentials, and verifies if the welcome message appears after logging in.
 
-Contribution
+## Contribution
 Although the project is mainly for demo purposes, if you have suggestions, fixes, or want to add new tests, feel free to open a pull request or create an issue.
-
-
