@@ -14,11 +14,16 @@ public class YamlData {
     private String firstName;
     private String lastName;
     private String companyName;
+    private String country;
     private String street;
     private String buildingNb;
+    private String suiteNb;
     private String postOffice;
     private String postCode;
     private String city;
+    private String email;
+    private String phone;
+    private String orderComments;
 
     public YamlData() {
     }
