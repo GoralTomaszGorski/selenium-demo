@@ -17,7 +17,7 @@ public class AddProductTest extends BaseTest {
     }
 
     @Test
-    public void addProductTest2() {
+    public void sendBillingDetailsTest() {
         new HomePage(driver)
                 .openShopPage()
                 .openProduct("Java Selenium WebDriver")
