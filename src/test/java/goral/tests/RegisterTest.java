@@ -30,10 +30,6 @@ public class RegisterTest extends BaseTest{
     @Test (priority = 2)
     public void registerUserWithSameTest() {
         WebElement error = new HomePage(driver).openMyAccountPage()
-                .registerUserInvalidData("tomek@testowy.pl", "tomek@testowy.pl").getError();
-
-        Assert.assertTrue(error.getText().contains("Error: An account is already registered with your email address. Please log in."));
-        WebElement error = new HomePage(driver).openMyAccountPage()
                 .registerUserInvalidData(generateEmail, generateEmail)
                 .getError();
         Assert.assertTrue(error.getText()
