@@ -1,5 +1,6 @@
 package goral.pages;
 
+import lombok.SneakyThrows;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -57,19 +58,22 @@ public class AddressDetailsPage {
     YamlReader reader = new YamlReader();
     YamlData dataYaml = reader.getYamlData();
 
-    public void sendBillingDetails(){
+    @SneakyThrows
+    public void sendBillingDetails() {
         firstNameInp.sendKeys(dataYaml.getFirstName());
         lastNameInp.sendKeys(dataYaml.getLastName());
         companyNameInp.sendKeys(dataYaml.getCompanyName());
         countryContainerInp.click();
-        selectCountryInp.sendKeys("Poland");
+        selectCountryInp.sendKeys(dataYaml.getCountry());
         selectCountryInp.sendKeys(Keys.ENTER);
         houseNbAndStreetInp.sendKeys(dataYaml.getStreet()+" "+dataYaml.getBuildingNb());
+        Thread.sleep(500);
         suitNbInp.sendKeys(dataYaml.getSuiteNb());
         billingPostcodeInp.sendKeys(dataYaml.getPostCode());
         billingCityInp.sendKeys(dataYaml.getCity());
         billingPhoneInp.sendKeys(dataYaml.getPhone());
         billingEmailInp.sendKeys(dataYaml.getEmail());
+        Thread.sleep(500);
         borderCommentsInp.sendKeys(dataYaml.getOrderComments());
     }
 
