@@ -37,4 +37,12 @@ public class RegisterTest extends BaseTest{
                 .getDashboardLink();
         Assert.assertEquals(dashboardLink.getText(), "Dashboard");
     }
+
+    @Test (priority = 4)
+    public void logInInvalidTest() {
+        new HomePage(driver)
+                .openMyAccountPage()
+                .logInInvalidData("tomekeeee@testowy.pl", "tomeeeek@testowy.pl")
+                .getError();
+    }
 }

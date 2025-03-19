@@ -28,7 +28,7 @@ public class AddProductTest extends BaseTest {
                 .sendBillingDetails();
     }
 
-    @Test
+    @Test (priority = 3)
     public void checkoutTest() throws InterruptedException {
         OrderDetailsPage orderDetailsPage = new HomePage(driver)
                 .openShopPage()
