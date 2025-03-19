@@ -11,13 +11,6 @@ public class RegisterTest extends BaseTest{
 
     String generateEmail = "Tomek" + DateUtil.getCurrentDateTime()+ "@testowy.pl";
 
-    @Test
-    public void registerTest(){
-        System.out.println("Mock");
-        System.out.println(DateUtil.getCurrentDateTime());
-        System.out.println(DateUtil.generateRandomNumber(1, 100));
-    }
-
     @Test (priority = 1)
     public void registerUserTest(){
        WebElement dashboardLink =  new HomePage(driver).openMyAccountPage()
