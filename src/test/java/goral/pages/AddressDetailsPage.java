@@ -1,6 +1,5 @@
 package goral.pages;
 
-import lombok.SneakyThrows;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,6 +47,9 @@ public class AddressDetailsPage {
     @FindBy( xpath = ("//textarea[@id='order_comments']"))
     private WebElement borderCommentsInp;
 
+    @FindBy( xpath = ("//button[@name='woocommerce_checkout_place_order']"))
+    private WebElement placeOrderBtn;
+
     private WebDriver driver;
 
     public AddressDetailsPage(WebDriver driver) {
@@ -58,8 +60,7 @@ public class AddressDetailsPage {
     YamlReader reader = new YamlReader();
     YamlData dataYaml = reader.getYamlData();
 
-    @SneakyThrows
-    public void sendBillingDetails() {
+    public OrderDetailsPage sendBillingDetails() throws InterruptedException {
         firstNameInp.sendKeys(dataYaml.getFirstName());
         lastNameInp.sendKeys(dataYaml.getLastName());
         companyNameInp.sendKeys(dataYaml.getCompanyName());
@@ -73,8 +74,12 @@ public class AddressDetailsPage {
         billingCityInp.sendKeys(dataYaml.getCity());
         billingPhoneInp.sendKeys(dataYaml.getPhone());
         billingEmailInp.sendKeys(dataYaml.getEmail());
-        Thread.sleep(500);
         borderCommentsInp.sendKeys(dataYaml.getOrderComments());
+        Thread.sleep(2000);
+        placeOrderBtn.click();
+        return new OrderDetailsPage(driver);
+
+
     }
 
 
