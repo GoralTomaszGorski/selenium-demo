@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import goral.pages.HomePage;
 
 public class AddProductTest extends BaseTest {
+    private OrderDetailsPage orderDetailsPage;
 
     //rename login test
     //add selenium helepr
@@ -33,7 +34,7 @@ public class AddProductTest extends BaseTest {
                 .sendBillingDetails();
     }
 
-    @Test (priority = 3)
+    @Test(priority = 3)
     public void checkoutTest() throws InterruptedException {
         OrderDetailsPage orderDetailsPage = new HomePage(driver)
                 .openShopPage()
@@ -42,8 +43,14 @@ public class AddProductTest extends BaseTest {
                 .viewCart()
                 .openAddressDetails()
                 .sendBillingDetails();
-        Assert.assertTrue(orderDetailsPage.getOrderNotice().getText().contains("Thank you. Your order has been received."));
-        Assert.assertTrue(orderDetailsPage.getOrderNotice().getText().contains("Java Selenium WebDriver × 1"));
+        Assert.assertEquals(
+                        "Thank you. Your order has been received.",
+                orderDetailsPage.getOrderNotice().getText()
+        );
+        Assert.assertEquals(
+                        "Java Selenium WebDriver",
+                orderDetailsPage.getProductName().getText()
+        );
     }
 
 }
