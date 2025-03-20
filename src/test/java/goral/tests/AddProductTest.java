@@ -7,6 +7,11 @@ import goral.pages.HomePage;
 
 public class AddProductTest extends BaseTest {
 
+    //rename login test
+    //add selenium helepr
+    //add browser checker
+    //add logs and raports
+
     @Test(priority = 1)
     public void addProductTest() {
         new HomePage(driver)
@@ -38,5 +43,7 @@ public class AddProductTest extends BaseTest {
                 .openAddressDetails()
                 .sendBillingDetails();
         Assert.assertTrue(orderDetailsPage.getOrderNotice().getText().contains("Thank you. Your order has been received."));
+        Assert.assertTrue(orderDetailsPage.getOrderNotice().getText().contains("Java Selenium WebDriver × 1"));
     }
+    
 }
