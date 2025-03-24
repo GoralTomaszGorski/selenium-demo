@@ -49,13 +49,6 @@
             <version>2.24.3</version>
         </dependency>
 
-        <!-- JUnit 3.x jest przestarzały, jeśli go nie używasz, usuń -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>  <!-- Lepiej użyć nowszej wersji -->
-            <scope>test</scope>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
