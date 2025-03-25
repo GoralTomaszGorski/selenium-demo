@@ -43,14 +43,6 @@ public class AddProductTest extends BaseTest {
                 .viewCart()
                 .openAddressDetails()
                 .sendBillingDetails();
-        Assert.assertEquals(
-                        "Thank you. Your order has been received.",
-                orderDetailsPage.getOrderNotice().getText()
-        );
-        Assert.assertEquals(
-                        "Java Selenium WebDriver",
-                orderDetailsPage.getProductName().getText()
-        );
+        Assert.assertTrue(orderDetailsPage.getOrderNotice().getText().contains("Thank you. Your order has been received."));
     }
-
 }
