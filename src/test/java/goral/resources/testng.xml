@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="selenium-demo" parallel="tests" thread-count="2">
+    <test name="RegisterTest">
+        <classes>
+            <class name="goral.tests.RegisterTest"/>
+        </classes>
+    </test>
+    <test name="AddProductTest">
+        <classes>
+            <class name="goral.tests.AddProductTest"/>
+        </classes>
+    </test>
+</suite>
