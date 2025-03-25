@@ -7,10 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class OrderDetailsPage {
 
-    @FindBy( xpath = ("//div[@class='woocommerce-order']"))
+    @FindBy( xpath = ("//p[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received']"))
+   // "//h4[contains(@class, 'list_title')]//b"
     private WebElement orderNotice;
 
-    @FindBy( xpath = ("//td[contains (@class, 'product-name')]"))
+    @FindBy( xpath = ("//td[contains (@class, 'product-name')]//a"))
     private WebElement productName;
 
     public OrderDetailsPage(WebDriver driver){
@@ -21,11 +22,9 @@ public class OrderDetailsPage {
         return orderNotice;
     }
 
-    public WebElement getproductName() {
+    public WebElement getProductName() {
         return productName;
     }
 
 
 }
-
-

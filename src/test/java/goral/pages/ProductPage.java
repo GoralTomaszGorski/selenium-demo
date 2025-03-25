@@ -1,6 +1,5 @@
 package goral.pages;
 
-import org.checkerframework.checker.units.qual.t;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,7 +24,6 @@ public class ProductPage {
     public ProductPage addProductToCart(){
         addToCartButton.click();
         return this;
-        
     }
 
     public CartPage viewCart(){
