@@ -60,6 +60,17 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown(ITestResult result) throws InterruptedException {
+        try {
+            if (result.getStatus() == ITestResult.FAILURE) {
+                test.fail("Test nie powiódł się: " + result.getThrowable(), SeleniumHelper.getScreenshot(driver));
+            } else if (result.getStatus() == ITestResult.SUCCESS) {
+                test.pass("Test zakończony sukcesem.");
+            } else {
+                test.skip("Test pominięty.");
+            }
+        } catch (IOException e) {
+            test.warning("Błąd podczas robienia screenshota: " + e.getMessage());
+        }
 
         Thread.sleep(2000);
         driver.quit();
