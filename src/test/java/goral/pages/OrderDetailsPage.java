@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 public class OrderDetailsPage {
 
     @FindBy( xpath = ("//p[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received']"))
-   // "//h4[contains(@class, 'list_title')]//b"
     private WebElement orderNotice;
 
     @FindBy( xpath = ("//td[contains (@class, 'product-name')]//a"))

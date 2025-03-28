@@ -25,7 +25,7 @@ public class BaseTest {
     protected WebDriver driver;
     protected static ExtentSparkReporter sparkReporter;
     protected static ExtentReports extentReports;
-    protected ExtentTest test; // Każdy test będzie miał własny obiekt testowy
+    protected ExtentTest test;
 
 
 
@@ -45,14 +45,12 @@ public class BaseTest {
         extentReports.setSystemInfo("Environment", "QA");
     }
 
-
     @BeforeMethod
     public void setup() throws IOException {
         driver = DriverFactory.getDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         driver.manage().window().maximize();
         driver.get(dataYaml.getUrlString());
-
 
         test = extentReports.createTest(getClass().getSimpleName());
         test.info("Start Test: " + getClass().getSimpleName());
@@ -61,15 +59,27 @@ public class BaseTest {
     @AfterMethod
     public void tearDown(ITestResult result) throws InterruptedException {
         try {
-            if (result.getStatus() == ITestResult.FAILURE) {
-                test.fail("Test nie powiódł się: " + result.getThrowable(), SeleniumHelper.getScreenshot(driver));
-            } else if (result.getStatus() == ITestResult.SUCCESS) {
-                test.pass("Test zakończony sukcesem.");
-            } else {
-                test.skip("Test pominięty.");
+            switch (result.getStatus()) {
+                case ITestResult.FAILURE:
+                    test.fail("Test failed: "
+                            + result.getThrowable(),
+                            SeleniumHelper.getScreenshot(driver));
+                    break;
+
+                case ITestResult.SUCCESS:
+                    test.pass("Test completed successfully.");
+                    break;
+
+                case ITestResult.SKIP:
+                    test.skip("Test was skipped.");
+                    break;
+
+                default:
+                    test.info("Test finished with an unknown status.");
+                    break;
             }
         } catch (IOException e) {
-            test.warning("Błąd podczas robienia screenshota: " + e.getMessage());
+            test.warning("Error while taking a screenshot: " + e.getMessage());
         }
 
         Thread.sleep(2000);
@@ -81,5 +91,4 @@ public class BaseTest {
     public void tearDownReport() {
         extentReports.flush();
     }
-
 }
