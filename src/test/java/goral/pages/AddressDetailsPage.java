@@ -60,7 +60,7 @@ public class AddressDetailsPage {
     YamlReader reader = new YamlReader();
     YamlData dataYaml = reader.getYamlData();
 
-    public OrderDetailsPage sendBillingDetails() throws InterruptedException {
+    public OrderDetailsPage sendBillingDetails() {
         firstNameInp.sendKeys(dataYaml.getFirstName());
         lastNameInp.sendKeys(dataYaml.getLastName());
         companyNameInp.sendKeys(dataYaml.getCompanyName());
@@ -68,14 +68,12 @@ public class AddressDetailsPage {
         selectCountryInp.sendKeys(dataYaml.getCountry());
         selectCountryInp.sendKeys(Keys.ENTER);
         houseNbAndStreetInp.sendKeys(dataYaml.getStreet()+" "+dataYaml.getBuildingNb());
-        Thread.sleep(500);
         suitNbInp.sendKeys(dataYaml.getSuiteNb());
         billingPostcodeInp.sendKeys(dataYaml.getPostCode());
         billingCityInp.sendKeys(dataYaml.getCity());
         billingPhoneInp.sendKeys(dataYaml.getPhone());
         billingEmailInp.sendKeys(dataYaml.getEmail());
         borderCommentsInp.sendKeys(dataYaml.getOrderComments());
-        Thread.sleep(2000);
         placeOrderBtn.click();
         return new OrderDetailsPage(driver);
 
