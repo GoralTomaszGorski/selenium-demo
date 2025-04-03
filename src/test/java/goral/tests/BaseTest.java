@@ -28,6 +28,7 @@ public class BaseTest {
     protected ExtentTest test;
 
 
+
     YamlReader reader = new YamlReader();
     YamlData dataYaml = reader.getYamlData();
 
@@ -44,6 +45,7 @@ public class BaseTest {
         extentReports.setSystemInfo("Environment", "QA");
     }
 
+    @BeforeMethod
     public void setup() throws IOException {
         driver = DriverFactory.getDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
@@ -78,24 +80,10 @@ public class BaseTest {
             }
         } catch (IOException e) {
             test.warning("Error while taking a screenshot: " + e.getMessage());
-            if (result.getStatus() == ITestResult.FAILURE) {
-                test.fail("Test nie powiódł się: " + result.getThrowable(), SeleniumHelper.getScreenshot(driver));
-            } else if (result.getStatus() == ITestResult.SUCCESS) {
-                test.pass("Test zakończony sukcesem.");
-            } else {
-                test.skip("Test pominięty.");
-            }
-
         }
 
         Thread.sleep(2000);
         driver.quit();
-        extentReports.flush();
-
-    }
-
-        @AfterSuite
-    public void tearDownReport() {
         extentReports.flush();
     }
 
