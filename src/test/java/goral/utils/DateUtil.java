@@ -11,7 +11,6 @@ public class DateUtil {
         return LocalDateTime.now().format(formatter);
     }
 
-    // Metoda zwracająca aktualną datę w podanym formacie (np. "dd/MM/yyyy HH:mm")
     public static String getFormattedDate(String pattern) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
         return LocalDateTime.now().format(formatter);

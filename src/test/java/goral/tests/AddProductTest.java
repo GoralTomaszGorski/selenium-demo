@@ -8,10 +8,7 @@ import goral.pages.HomePage;
 public class AddProductTest extends BaseTest {
     private OrderDetailsPage orderDetailsPage;
 
-    //rename login test
-    //add selenium helepr
-    //add browser checker
-    //add logs and raports
+    //add logs
 
     @Test(priority = 1)
     public void addProductTest() {
