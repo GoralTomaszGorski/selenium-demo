@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import goral.pages.HomePage;
 
 public class AddProductTest extends BaseTest {
-    private OrderDetailsPage orderDetailsPage;
 
     //add logs
 
@@ -21,7 +20,7 @@ public class AddProductTest extends BaseTest {
     }
 
     @Test(priority = 2)
-    public void sendBillingDetailsTest() throws InterruptedException {
+    public void sendBillingDetailsTest() {
         new HomePage(driver)
                 .openShopPage()
                 .openProduct("BDD Cucumber")
@@ -32,7 +31,7 @@ public class AddProductTest extends BaseTest {
     }
 
     @Test(priority = 3)
-    public void checkoutTest() throws InterruptedException {
+    public void checkoutTest() {
         OrderDetailsPage orderDetailsPage = new HomePage(driver)
                 .openShopPage()
                 .openProduct("Java Selenium WebDriver")

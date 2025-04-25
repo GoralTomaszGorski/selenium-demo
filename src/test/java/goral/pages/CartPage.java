@@ -23,5 +23,4 @@ public class CartPage {
         return new AddressDetailsPage(driver);
 
     }
-
 }

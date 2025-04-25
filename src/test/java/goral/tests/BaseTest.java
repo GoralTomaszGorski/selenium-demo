@@ -27,8 +27,6 @@ public class BaseTest {
     protected static ExtentReports extentReports;
     protected ExtentTest test;
 
-
-
     YamlReader reader = new YamlReader();
     YamlData dataYaml = reader.getYamlData();
 

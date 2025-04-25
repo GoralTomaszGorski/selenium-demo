@@ -30,5 +30,4 @@ public class ProductPage {
         viewCartButton.click();
         return new CartPage(driver);
     }
-
 }
