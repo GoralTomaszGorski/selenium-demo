@@ -1,73 +1,103 @@
-# Selenium Demo Project
+# Selenium Demo
 
-## Description
+A demonstration project for UI test automation using **Selenium WebDriver**, **TestNG**, and **ExtentReports**. The project follows the Page Object Model pattern and uses YAML files for configuration.
 
-The **Selenium Demo** project is a simple example of using Selenium WebDriver to automate web application testing. It is an educational demo project aimed at learning the basics of UI test automation, including interacting with page elements such as forms, buttons, and other components.
+## 🔧 Technologies Used
 
-The project is based on Selenium WebDriver and aims to provide simple, understandable test examples that can be used as a starting point for more advanced testing scenarios.
+- Java 21
+- Maven
+- Selenium 4.30.0
+- TestNG 7.10.2
+- WebDriverManager 5.9.2
+- ExtentReports 5.1.2
+- Log4j 2.24.3
+- Lombok 1.18.36
+- SnakeYAML 2.2
 
-## Technologies
+## 🚀 Running Tests
 
-- **Selenium WebDriver** – tool for automating web application tests
-- **Programming Language**: Java
-- **Test Framework**: TestNG
-- **Maven** – dependency management tool
-- **ChromeDriver** – for handling Google Chrome in tests
-
-## Installation
-
-1. **Clone the repository**:
-
-   Clone the repository to your local machine:
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/GoralTomaszGorski/selenium-demo.git
-   
-2. **Install dependencies:**:
-
-    If you are using Maven:
-
-   ```bash
-    cd selenium-demo
-    mvn install
-
-3. **Set up WebDriver:**
-
-
-    Make sure you have the correct WebDriver installed (e.g., ChromeDriver for Google Chrome). Remember to update the WebDriver path in the code if needed.
-
-4. **Run the tests:**
-
-   To run the tests, use Maven:
-    ```bash
-    mvn test
-    ```
-
-## Example Usage
-
-The project includes basic tests that perform interactions with a sample web page. Here's an example of a simple login test:
-
-   ```bash
-@Test
-public void testLogin() {
-    WebDriver driver = new ChromeDriver();
-    driver.get("https://example.com/login");
-
-    WebElement username = driver.findElement(By.id("username"));
-    username.sendKeys("testuser");
-
-    WebElement password = driver.findElement(By.id("password"));
-    password.sendKeys("password123");
-
-    WebElement submitButton = driver.findElement(By.id("submit"));
-    submitButton.click();
-
-    Assert.assertTrue(driver.findElement(By.id("welcome-message")).isDisplayed());
-
-    driver.quit();
-}
+   cd selenium-demo
    ```
-The login test opens the page, enters login credentials, and verifies if the welcome message appears after logging in.
 
-## Contribution
-Although the project is mainly for demo purposes, if you have suggestions, fixes, or want to add new tests, feel free to open a pull request or create an issue.
+2. Run tests using Maven:
+
+   ```bash
+   mvn clean test
+   ```
+
+Tests will run according to the configuration defined in `testng.xml`.
+
+## 📊 Reporting (ExtentReports)
+
+After tests are executed, an HTML report is generated using **ExtentReports**.
+
+### 📁 Report Location:
+```
+test-output/ExtentReports/ExtentReport.html
+```
+
+### 🖥️ Preview:
+
+Open the report in your browser:
+
+```bash
+start test-output/ExtentReports/ExtentReport.html
+```
+(Use the appropriate command for your OS)
+
+The report includes:
+- Test status (pass/fail/skip)
+- Detailed steps for each test
+- Screenshots on failure
+- Log output (log4j)
+
+## 📁 Project Structure
+
+```
+selenium-demo/
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       └── goral/
+│   │           ├── config/       # YAML configuration
+│   │           ├── drivers/      # WebDriver initialization
+│   │           ├── pages/        # Page Object classes
+│   │           ├── reports/      # Report generation logic
+│   │           └── utils/        # Helpers, logging
+│   └── test/
+│       └── java/
+│           └── goral/
+│               └── tests/        # TestNG test classes
+│               └── resources/    # testng.xml, config.yaml
+├── test-output/                  # ExtentReports output
+└── pom.xml
+```
+
+## ⚙️ Configuration
+
+Test configuration is defined in the `config.yaml` file.
+
+Example:
+```yaml
+url: "https://example.com"
+browser: "chrome"
+```
+
+## 📌 Future Improvements
+
+- Add Allure Reports
+- Integrate CI/CD (GitHub Actions, Jenkins)
+- Add mobile testing (Appium)
+- Add API testing (RestAssured or OkHttp)
+
+---
+
+## 👨‍💻 Author
+
+**Tomasz Górski**
+
+[GitHub](https://github.com/GoralTomaszGorski) | [LinkedIn](https://linkedin.com)
