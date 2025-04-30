@@ -91,7 +91,6 @@ browser: "chrome"
 
 - Add Allure Reports
 - Integrate CI/CD (GitHub Actions, Jenkins)
-- Add mobile testing (Appium)
 - Add API testing (RestAssured or OkHttp)
 
 ---
