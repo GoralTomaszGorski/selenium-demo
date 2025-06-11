@@ -7,8 +7,6 @@ import goral.pages.HomePage;
 
 public class AddProductTest extends BaseTest {
 
-    //add logs
-
     @Test(priority = 1)
     public void addProductTest() {
         new HomePage(driver)
