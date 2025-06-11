@@ -1,6 +1,12 @@
 # Selenium Demo
 
-A demonstration project for UI test automation using **Selenium WebDriver**, **TestNG**, and **ExtentReports**. The project follows the Page Object Model pattern and uses YAML files for configuration.
+![Java](https://img.shields.io/badge/Java-21-blue)
+![Selenium](https://img.shields.io/badge/Selenium-4.30.0-brightgreen)
+![TestNG](https://img.shields.io/badge/TestNG-7.10.2-orange)
+![ExtentReports](https://img.shields.io/badge/ExtentReports-5.1.2-lightgrey)
+
+A demonstration project for UI test automation using **Selenium WebDriver**, **TestNG**, and **ExtentReports**. The project follows the Page Object Model pattern and uses YAML configuration files.
+
 
 ## 🔧 Technologies Used
 
@@ -42,7 +48,7 @@ test-output/ExtentReports/ExtentReport.html
 
 ### 🖥️ Preview:
 
-Open the report in your browser:
+To preview the report in your browser:
 
 ```bash
 start test-output/ExtentReports/ExtentReport.html
