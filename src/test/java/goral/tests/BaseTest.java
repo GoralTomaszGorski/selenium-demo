@@ -79,8 +79,6 @@ public class BaseTest {
         } catch (IOException e) {
             test.warning("Error while taking a screenshot: " + e.getMessage());
         }
-
-        Thread.sleep(2000);
         driver.quit();
         extentReports.flush();
     }
